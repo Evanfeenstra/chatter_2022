@@ -30,3 +30,19 @@
   font-size: 2rem;
   margin-left: 1rem;
 }
+.messages {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  overflow: auto;
+  max-height: calc(100vh - 4rem - 4rem);
+  min-height: calc(100vh - 4rem - 4rem);
+  padding: 1rem;
+}
+.message {
+  color: white;
+  background: black;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border-radius: 0.3rem;
+}
