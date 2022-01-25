@@ -1,4 +1,5 @@
 import "./App.css";
+import TextInput from "./TextInput";
 
 function App() {
   return (
@@ -7,10 +8,7 @@ function App() {
         <div className="logo" />
         <span className="title">CHATTER!</span>
       </header>
-      <footer className="footer">
-        <input className="text-input" />
-        <button className="send">↑</button>
-      </footer>
+      <TextInput />
     </div>
   );
 }
