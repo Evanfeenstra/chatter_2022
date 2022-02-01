@@ -1,5 +1,6 @@
 import "./TextInput.css";
 import { useState } from "react";
+import { FiSend } from "react-icons/fi";
 
 function TextInput(props) {
   const [text, setText] = useState("");
@@ -23,7 +24,7 @@ function TextInput(props) {
         onKeyPress={onKeyPress}
       />
       <button className="send" onClick={send}>
-        ↑
+        <FiSend />
       </button>
     </footer>
   );

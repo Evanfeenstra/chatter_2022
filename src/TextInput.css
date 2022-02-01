@@ -26,4 +26,14 @@
   position: absolute;
   right: 1.15rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.send:hover {
+  background: black;
+  border: 1px solid white;
+}
+.send:hover svg {
+  stroke: white;
 }
