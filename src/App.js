@@ -1,17 +1,16 @@
 import "./App.css";
 import TextInput from "./TextInput";
-import React, { useState } from "react";
+import React from "react";
 import Message from "./Message";
 import { use100vh } from "react-div-100vh";
+import { db, useDB } from "./db";
 
 // this is a Component call App
 function App() {
   const height = use100vh();
-  // useState creats a magic variable
-  // here its called "messages"
-  // the initial value is an empty array []
-  // "setMessages" is a function that is used to update "messages"
-  let [messages, setMessages] = useState([]);
+
+  const room = "___";
+  const messages = useDB(room);
 
   // "sendMessage" runs whenver we click the send button
   function sendMessage(text) {
@@ -19,12 +18,11 @@ function App() {
     // we'll create a new message object
     const newMessage = {
       text: text,
-      time: Date.now(),
+      time: new Date(),
       user: "Evan",
+      room: room,
     };
-    // set the "messages" to be a new array
-    // that contains the new message + all the old messages
-    setMessages([newMessage, ...messages]);
+    db.send(newMessage);
   }
 
   // every time state changes, React "re-renders"
