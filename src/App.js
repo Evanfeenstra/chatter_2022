@@ -4,15 +4,13 @@ import React, { useState } from "react";
 import Message from "./Message";
 import { use100vh } from "react-div-100vh";
 import NamePicker from "./NamePicker";
+import { useDB, db } from "./db";
 
 // this is a Component call App
 function App() {
   const height = use100vh();
-  // useState creats a magic variable
-  // here its called "messages"
-  // the initial value is an empty array []
-  // "setMessages" is a function that is used to update "messages"
-  let [messages, setMessages] = useState([]);
+
+  const messages = useDB();
 
   // our username
   let [username, setUsername] = useState("");
@@ -26,9 +24,7 @@ function App() {
       time: Date.now(),
       user: username,
     };
-    // set the "messages" to be a new array
-    // that contains the new message + all the old messages
-    setMessages([newMessage, ...messages]);
+    db.send(newMessage);
   }
 
   // every time state changes, React "re-renders"
