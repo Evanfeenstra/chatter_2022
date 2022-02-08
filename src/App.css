@@ -36,16 +36,42 @@
   align-items: flex-start;
   overflow: auto;
   flex: 1;
-  padding: 1rem;
+}
+.message-row {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  flex-direction: row;
 }
 .message {
   color: white;
   background: black;
   padding: 0.5rem 1rem;
-  margin: 0.2rem;
+  margin: 0.5rem;
   border-radius: 0.3rem;
   max-width: 20rem;
   min-height: auto;
   overflow-wrap: break-word;
   position: relative;
+}
+.message-user {
+  position: absolute;
+  left: 0;
+  top: -0.8rem;
+  font-size: 0.5rem;
+}
+
+.name-picker {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.name-picker svg {
+  stroke: white;
+  cursor: pointer;
+}
+.name-picker-name {
+  color: white;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
 }

@@ -3,6 +3,7 @@ import TextInput from "./TextInput";
 import React, { useState } from "react";
 import Message from "./Message";
 import { use100vh } from "react-div-100vh";
+import NamePicker from "./NamePicker";
 
 // this is a Component call App
 function App() {
@@ -13,6 +14,9 @@ function App() {
   // "setMessages" is a function that is used to update "messages"
   let [messages, setMessages] = useState([]);
 
+  // our username
+  let [username, setUsername] = useState("");
+
   // "sendMessage" runs whenver we click the send button
   function sendMessage(text) {
     if (!text.trim()) return;
@@ -20,7 +24,7 @@ function App() {
     const newMessage = {
       text: text,
       time: Date.now(),
-      user: "Evan",
+      user: username,
     };
     // set the "messages" to be a new array
     // that contains the new message + all the old messages
@@ -40,6 +44,8 @@ function App() {
       <header className="header">
         <div className="logo" />
         <span className="title">CHATTER!</span>
+        {/* the NamePicker */}
+        <NamePicker setUsername={setUsername} />
       </header>
       <div className="messages">
         {messages.map((msg, i) => {
@@ -47,7 +53,7 @@ function App() {
           // and return a Message component
           // we are "spreading" all the items in "msg" into the props
           // "key" needs to be a unique value for each item
-          return <Message {...msg} key={i} />;
+          return <Message {...msg} key={i} fromMe={msg.user === username} />;
         })}
       </div>
       {/* the sendMessage prop on TextInput = the sendMessage function */}
