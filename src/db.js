@@ -22,7 +22,7 @@ function useDB(room) {
     setMessages((current) => {
       const msgs = [m, ...current];
       msgs.sort(
-        (a, b) => (b.date && b.date.seconds) - (a.date && a.date.seconds)
+        (a, b) => (a.time && a.time.seconds) - (b.time && b.time.seconds)
       );
       return msgs;
     });
@@ -58,6 +58,15 @@ db.delete = async function (id) {
 };
 
 export { db, useDB };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB1yH6qnCipRP8ud2m2wHvCiXQv-pAOLmA",
+//   authDomain: "chatter-2022.firebaseapp.com",
+//   projectId: "chatter-2022",
+//   storageBucket: "chatter-2022.appspot.com",
+//   messagingSenderId: "608856859166",
+//   appId: "1:608856859166:web:05c87cf0e97c6c63bd440f"
+// };
 
 const firebaseConfig = {
   apiKey: "AIzaSyCxnHdHGicbw16DmQfEbNVy7XD6ENprVNQ",
