@@ -69,12 +69,12 @@ export { db, useDB };
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCxnHdHGicbw16DmQfEbNVy7XD6ENprVNQ",
-  authDomain: "chatter2021-2b8fb.firebaseapp.com",
-  projectId: "chatter2021-2b8fb",
-  storageBucket: "chatter2021-2b8fb.appspot.com",
-  messagingSenderId: "778098356347",
-  appId: "1:778098356347:web:c396b31d7a0a5c0c6c32de",
+  apiKey: "AIzaSyB1yH6qnCipRP8ud2m2wHvCiXQv-pAOLmA",
+  authDomain: "chatter-2022.firebaseapp.com",
+  projectId: "chatter-2022",
+  storageBucket: "chatter-2022.appspot.com",
+  messagingSenderId: "608856859166",
+  appId: "1:608856859166:web:05c87cf0e97c6c63bd440f",
 };
 
 const app = initializeApp(firebaseConfig);

@@ -23,6 +23,10 @@
   background-repeat: no-repeat;
   border-radius: 50%;
   border: 1px solid white;
+  transition: all 0.3s ease-in;
+}
+.logo:hover {
+  transform: rotate(180deg) scale(20.3);
 }
 .title {
   color: white;
@@ -53,6 +57,7 @@
   min-height: auto;
   overflow-wrap: break-word;
   position: relative;
+  transition: transform 0.3s;
 }
 .message-user {
   position: absolute;

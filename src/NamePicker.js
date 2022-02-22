@@ -5,12 +5,13 @@ import { FiEdit } from "react-icons/fi";
 // by convention, we name it with a capital first letter
 function NamePicker(props) {
   // this is the state of the name itself
-  const [name, setName] = useState("");
+  const [name, setName] = useState(props.initialName);
   // this is a toggle between showing and hiding the input
   const [showInput, setShowInput] = useState(false);
 
   // you clicked ok!
   function ok() {
+    localStorage.setItem("name", name);
     props.setUsername(name);
     setShowInput(false);
   }
